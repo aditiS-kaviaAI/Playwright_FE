@@ -11,15 +11,17 @@
       - generic [ref=e11]: Email
       - textbox "Email address" [ref=e12]:
         - /placeholder: you@example.com
-    - button "Find organizations for this email" [disabled] [ref=e14]: Find Organizations
+        - text: invalid@example.com
+    - button "Find organizations for this email" [ref=e14] [cursor=pointer]: Find Organizations
     - generic [ref=e15]:
       - generic [ref=e16]: Organization
       - combobox "Organization" [ref=e17]:
         - option "Select organization..." [selected]
     - generic [ref=e18]:
       - generic [ref=e19]: Password
-      - textbox "Password" [ref=e20]:
+      - textbox "Password" [active] [ref=e20]:
         - /placeholder: ••••••••
+        - text: wrong-password
     - button "Login" [disabled] [ref=e21]
   - generic [ref=e23]: By signing in you agree to the Terms and Privacy Policy.
 ```
