@@ -1,0 +1,16 @@
+{
+  "name": "playwright-fe",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Playwright end-to-end tests for the frontend login screen",
+  "type": "module",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "typescript": "^5.6.3"
+  }
+}
