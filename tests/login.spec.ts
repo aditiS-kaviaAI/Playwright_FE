@@ -7,6 +7,9 @@ test.describe('Login screen', () => {
 
     await login.goto();
     await login.assertLoaded();
+
+    // Additional real-page elements (helps catch regressions and ensures locators stay unique).
+    await expect(login.findOrganizationsButton).toBeVisible();
   });
 
   test('shows validation when submitting empty form (if implemented)', async ({ page }) => {
@@ -25,9 +28,6 @@ test.describe('Login screen', () => {
      *
      * We assert at least one reasonable signal.
      */
-    const emailInvalid = page.locator('[aria-invalid="true"]').filter({ has: login.emailInput });
-    const passwordInvalid = page.locator('[aria-invalid="true"]').filter({ has: login.passwordInput });
-
     const inlineError = page.getByText(/required|enter email|enter password|invalid/i);
     const alert = login.errorAlert;
 
