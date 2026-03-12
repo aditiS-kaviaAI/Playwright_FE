@@ -17,8 +17,9 @@ export default defineConfig({
   reporter: [['list']],
 
   use: {
-    // Configure target app base URL (dev server should already be running)
-    baseURL: process.env.BASE_URL ?? 'http://localhost:3000',
+    // Configure target app base URL (app should already be deployed/running).
+    // Override in CI or locally via BASE_URL if needed.
+    baseURL: process.env.BASE_URL ?? 'https://mongodb-dashboard-53.kavia.app/',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
